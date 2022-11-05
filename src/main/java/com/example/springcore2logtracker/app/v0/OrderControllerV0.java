@@ -1,4 +1,4 @@
-package com.example.springcore2logtracker.app;
+package com.example.springcore2logtracker.app.v0;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
