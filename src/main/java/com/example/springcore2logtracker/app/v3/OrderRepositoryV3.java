@@ -30,9 +30,6 @@ public class OrderRepositoryV3 {
             trace.exception(status, e);
             throw e;
         }
-
-
-
     }
 
     private void sleep(int millis) {

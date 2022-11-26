@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class OrderControllerV3 {
-
     private final OrderServiceV3 orderService;
     private final LogTrace trace;
-
     @GetMapping("/v3/request")
     public String request(String itemId) {
         TraceStatus status = null;
@@ -29,5 +27,4 @@ public class OrderControllerV3 {
 
 
     }
-
 }

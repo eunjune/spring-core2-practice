@@ -1,6 +1,7 @@
 package com.example.springcore2logtracker.trace.strategy;
 
 import com.example.springcore2logtracker.trace.strategy.code.strategy.ContextV1;
+import com.example.springcore2logtracker.trace.strategy.code.strategy.Strategy;
 import com.example.springcore2logtracker.trace.strategy.code.strategy.StrategyLogic1;
 import com.example.springcore2logtracker.trace.strategy.code.strategy.StrategyLogic2;
 import lombok.extern.slf4j.Slf4j;
@@ -41,8 +42,57 @@ public class ContextV1Test {
         StrategyLogic2 strategyLogic2 = new StrategyLogic2();
         ContextV1 cotext2 = new ContextV1(strategyLogic2);
         cotext2.execute();
+    }
 
+    @Test
+    public void strategy2() {
+        Strategy strategyLogic1 = new Strategy() {
+            @Override
+            public void call() {
+                log.info("비즈니스 로직1 실행");
+            }
+        };
+        ContextV1 context1 = new ContextV1(strategyLogic1);
+        log.info("strategyLogic1={}",strategyLogic1.getClass());
+        context1.execute();
+
+        Strategy strategyLogic2 = new Strategy() {
+            @Override
+            public void call() {
+                log.info("비즈니스 로직2 실행");
+            }
+        };
+        ContextV1 context2 = new ContextV1(strategyLogic2);
+        log.info("strategyLogic2={}",strategyLogic1.getClass());
+        context2.execute();
 
     }
 
+    @Test
+    public void strategy3() {
+        ContextV1 context1 = new ContextV1(new Strategy() {
+            @Override
+            public void call() {
+                log.info("비즈니스 로직1 실행");
+            }
+        });
+        context1.execute();
+
+        ContextV1 context2 = new ContextV1(new Strategy() {
+            @Override
+            public void call() {
+                log.info("비즈니스 로직2 실행");
+            }
+        });
+        context2.execute();
+    }
+
+    @Test
+    public void strategy4() {
+        ContextV1 context1 = new ContextV1(() -> log.info("비즈니스 로직1 실행"));
+        context1.execute();
+
+        ContextV1 context2 = new ContextV1(() -> log.info("비즈니스 로직2 실행"));
+        context2.execute();
+    }
 }
