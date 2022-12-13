@@ -1,6 +1,9 @@
-package com.example.proxy.config.v1_proxy.interface_proxy;
+package com.example.proxy.config.v1_proxy;
 
 import com.example.proxy.app.v1.*;
+import com.example.proxy.config.v1_proxy.interface_proxy.OrderControllerInterfaceProxy;
+import com.example.proxy.config.v1_proxy.interface_proxy.OrderRepositoryInterfaceProxy;
+import com.example.proxy.config.v1_proxy.interface_proxy.OrderServiceInterfaceProxy;
 import com.example.proxy.trace.logtrace.LogTrace;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
