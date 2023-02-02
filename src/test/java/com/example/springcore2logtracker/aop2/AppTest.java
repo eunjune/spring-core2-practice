@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Import;
 
 @Slf4j
 @SpringBootTest
+@Import(AspectV1.class)
 public class AppTest {
 
     @Autowired
