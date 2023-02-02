@@ -2,7 +2,7 @@ package com.example.springcore2logtracker.aop2;
 
 import com.example.aop2.order.OrderRepository;
 import com.example.aop2.order.OrderService;
-import com.example.aop2.order.aop.AspectV2;
+import com.example.aop2.order.aop.AspectV3;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,7 +14,8 @@ import org.springframework.context.annotation.Import;
 @Slf4j
 @SpringBootTest
 //@Import(AspectV1.class)
-@Import(AspectV2.class)
+//@Import(AspectV2.class)
+@Import(AspectV3.class)
 public class AppTest {
 
     @Autowired
